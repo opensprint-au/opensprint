@@ -6,7 +6,7 @@ export async function onRequestPost({ request, env }) {
   const field = (name, max) => String(form.get(name) ?? '').trim().slice(0, max);
 
   // Honeypot filled in: pretend success so bots learn nothing
-  if (field('website', 200)) return redirect(request, '/thanks.html');
+  if (field('website', 200)) return redirect(request, '/thanks');
 
   const turnstile = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
     method: 'POST',
@@ -42,7 +42,7 @@ export async function onRequestPost({ request, env }) {
     return fail('Your message could not be sent right now. Please email us directly instead.');
   }
 
-  return redirect(request, '/thanks.html');
+  return redirect(request, '/thanks');
 }
 
 function redirect(request, path) {
