@@ -20,12 +20,12 @@ Marketing site for OpenSprint, a managed IT services company in Sydney. Live at 
 2. Keep the `<!-- header -->…<!-- /header -->` and `<!-- footer -->…<!-- /footer -->` blocks identical on every page. Change them across all pages together; the markers exist to make that easy.
 3. Set `<title>` (format: "Page name | OpenSprint"), the description, the canonical URL and the `og:` tags.
 4. Use extensionless links (`/about`, not `/about.html`). Pages serves `about.html` at `/about`.
-5. Add the URL to `public/sitemap.xml`, and add it to the header nav if it belongs there.
+5. Add the URL to `public/sitemap.xml` with a `<lastmod>` date (update that date whenever the page changes), and add it to the header nav if it belongs there.
 6. Inline `<script>` and `style=""` attributes are blocked by the CSP. Use `public/js/site.js` and `public/css/style.css` instead.
 
 ## Hosting and deploy
 
-- Cloudflare Pages project `opensprint`, deployed from the `main` branch of github.com/natewhi/opensprint. Build command: none. Output directory: `public`.
+- Cloudflare Pages project `opensprint`, deployed from the `main` branch of github.com/opensprint-au/opensprint (GitHub org `opensprint-au`). Build command: none. Output directory: `public`.
 - Pushing to `main` deploys to production. Pushing any other branch creates a preview URL.
 - Environment variables (set in Cloudflare): `TURNSTILE_SECRET`, `RESEND_API_KEY`, `MAIL_TO`, `MAIL_FROM`. Changes to them only take effect after a redeploy.
 - Preview locally with `python -m http.server 8000 -d public`. The form doesn't work locally.
