@@ -8,6 +8,12 @@ export async function onRequestPost({ request, env }) {
   // Honeypot filled in: pretend success so bots learn nothing
   if (field('website', 200)) return redirect(request, '/thanks');
 
+  const missing = ['TURNSTILE_SECRET', 'RESEND_API_KEY', 'MAIL_TO', 'MAIL_FROM'].filter((k) => !env[k]);
+  if (missing.length) {
+    console.error('Missing env vars', missing);
+    return fail(`The form isn't configured yet. Please email us directly instead. (missing: ${missing.join(', ')})`);
+  }
+
   const turnstile = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
     method: 'POST',
     body: new URLSearchParams({
