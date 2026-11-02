@@ -16,7 +16,12 @@ export async function onRequestPost({ request, env }) {
       remoteip: request.headers.get('CF-Connecting-IP') ?? '',
     }),
   });
-  if (!(await turnstile.json()).success) return fail('The spam check failed. Please go back and try again.');
+  const check = await turnstile.json();
+  if (!check.success) {
+    const codes = (check['error-codes'] ?? []).join(', ') || 'unknown';
+    console.error('Turnstile failed', codes);
+    return fail(`The spam check failed. Please go back and try again. (${codes})`);
+  }
 
   const name = field('name', 100).replace(/[\r\n]+/g, ' ');
   const email = field('email', 200);
