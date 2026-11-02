@@ -11,7 +11,7 @@ export async function onRequestPost({ request, env }) {
   const missing = ['TURNSTILE_SECRET', 'RESEND_API_KEY', 'MAIL_TO', 'MAIL_FROM'].filter((k) => !env[k]);
   if (missing.length) {
     console.error('Missing env vars', missing);
-    return fail(`The form isn't configured yet. Please email us directly instead. (missing: ${missing.join(', ')})`);
+    return fail("The form isn't working right now. Please email us directly instead.");
   }
 
   const turnstile = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
@@ -24,9 +24,8 @@ export async function onRequestPost({ request, env }) {
   });
   const check = await turnstile.json();
   if (!check.success) {
-    const codes = (check['error-codes'] ?? []).join(', ') || 'unknown';
-    console.error('Turnstile failed', codes);
-    return fail(`The spam check failed. Please go back and try again. (${codes})`);
+    console.error('Turnstile failed', check['error-codes']);
+    return fail('The spam check failed. Please go back and try again.');
   }
 
   const name = field('name', 100).replace(/[\r\n]+/g, ' ');

@@ -1,15 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-AU">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OpenSprint — Managed IT Services</title>
+  <title>OpenSprint | Managed IT Services in Sydney</title>
   <meta name="description" content="OpenSprint is a Sydney managed service provider: fast, transparent IT support, security and cloud management for growing businesses.">
+  <link rel="canonical" href="https://www.opensprint.com.au/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OpenSprint">
+  <meta property="og:title" content="OpenSprint | Managed IT Services in Sydney">
+  <meta property="og:description" content="Fast, transparent IT support, security and cloud management for growing businesses.">
+  <meta property="og:url" content="https://www.opensprint.com.au/">
   <meta name="theme-color" content="#0b1220">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/site.js" defer></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
+  <!-- header -->
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="/" aria-label="OpenSprint home">
@@ -17,12 +26,13 @@
         <span>OpenSprint</span>
       </a>
       <nav aria-label="Main">
-        <a href="#services">Services</a>
-        <a href="#approach">Approach</a>
-        <a class="btn btn-sm" href="#contact">Get in touch</a>
+        <a href="/#services">Services</a>
+        <a href="/#approach">Approach</a>
+        <a class="btn btn-sm" href="/#contact">Get in touch</a>
       </nav>
     </div>
   </header>
+  <!-- /header -->
 
   <main>
     <section class="hero">
@@ -99,7 +109,7 @@
         <div>
           <h2>Let's talk</h2>
           <p class="section-lede">Tell us about your setup and we'll come back with a free review and a fixed monthly quote.</p>
-          <!-- TODO: replace with real contact details -->
+          <!-- TODO: replace with real phone number -->
           <p class="contact-detail"><a href="mailto:hello@opensprint.com.au">hello@opensprint.com.au</a></p>
           <p class="contact-detail"><a href="tel:+61200000000">(02) 0000 0000</a></p>
           <p class="contact-detail">Sydney, NSW</p>
@@ -112,18 +122,23 @@
           <!-- Honeypot: hidden from people, filled in by bots -->
           <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
           <div class="cf-turnstile" data-sitekey="0x4AAAAAAFxTJyCTafk5p7rK"></div>
+          <p class="form-note">We only use your details to reply to you. See our <a href="/privacy">privacy policy</a>.</p>
           <button class="btn" type="submit">Send message</button>
         </form>
       </div>
     </section>
   </main>
 
+  <!-- footer -->
   <footer class="site-footer">
-    <div class="wrap">
-      <p>&copy; <span id="y">2026</span> OpenSprint. All rights reserved.</p>
+    <div class="wrap footer">
+      <p>&copy; <span data-year>2026</span> OpenSprint · Sydney, NSW</p>
+      <nav aria-label="Footer">
+        <a href="/privacy">Privacy</a>
+        <a href="mailto:hello@opensprint.com.au">hello@opensprint.com.au</a>
+      </nav>
     </div>
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <!-- /footer -->
 </body>
 </html>
