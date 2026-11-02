@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenSprint — Managed IT Services</title>
+  <meta name="description" content="OpenSprint is a Sydney managed service provider: fast, transparent IT support, security and cloud management for growing businesses.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="OpenSprint home">
+        <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M9 21 L15 11 L18 16 L23 9" fill="none" stroke="var(--bg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>OpenSprint</span>
+      </a>
+      <nav aria-label="Main">
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a class="btn btn-sm" href="#contact">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Managed IT services · Sydney</p>
+        <h1>IT that keeps pace with your business.</h1>
+        <p class="lede">OpenSprint looks after your devices, networks, cloud and security, so your team can get on with their work. Fast responses, plain-English answers, and no lock-in contracts.</p>
+        <div class="cta-row">
+          <a class="btn" href="#contact">Book a free IT review</a>
+          <a class="btn btn-ghost" href="#services">See what we do</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="wrap">
+        <h2>Services</h2>
+        <p class="section-lede">Pick one service or have us run all of it. Everything is billed per user, per month.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Helpdesk &amp; support</h3>
+            <p>Remote and on-site support for your staff by phone, email or ticket. Real engineers, not scripts.</p>
+          </article>
+          <article class="card">
+            <h3>Cybersecurity</h3>
+            <p>Endpoint protection, patching, MFA, email filtering and security awareness training as standard.</p>
+          </article>
+          <article class="card">
+            <h3>Cloud &amp; Microsoft 365</h3>
+            <p>Migration, licensing and day-to-day administration of Microsoft 365, Google Workspace and Azure.</p>
+          </article>
+          <article class="card">
+            <h3>Backup &amp; recovery</h3>
+            <p>Automated, monitored backups of devices, servers and SaaS data, with regular restore tests.</p>
+          </article>
+          <article class="card">
+            <h3>Networks &amp; infrastructure</h3>
+            <p>Wi-Fi, firewalls, switching and servers, designed properly and monitored around the clock.</p>
+          </article>
+          <article class="card">
+            <h3>IT strategy</h3>
+            <p>Roadmaps, budgeting and vendor management, so tech decisions are made ahead of time, not in a crisis.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach" class="section section-alt">
+      <div class="wrap">
+        <h2>Why OpenSprint</h2>
+        <div class="grid grid-2">
+          <div class="point">
+            <h3><span class="num">01</span> Open by default</h3>
+            <p>Clear pricing, documented systems and admin access that stays yours. If you ever leave, you take everything with you.</p>
+          </div>
+          <div class="point">
+            <h3><span class="num">02</span> Fast when it matters</h3>
+            <p>Issues get triaged in minutes, not days. Fixes that stop people working always come first.</p>
+          </div>
+          <div class="point">
+            <h3><span class="num">03</span> Proactive, not reactive</h3>
+            <p>We monitor, patch and keep things current, so fewer problems ever turn into tickets.</p>
+          </div>
+          <div class="point">
+            <h3><span class="num">04</span> Month-to-month</h3>
+            <p>No long contracts. We plan to keep your business by doing good work.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="wrap contact">
+        <div>
+          <h2>Let's talk</h2>
+          <p class="section-lede">Tell us about your setup and we'll come back with a free review and a fixed monthly quote.</p>
+          <!-- TODO: replace with real contact details -->
+          <p class="contact-detail"><a href="mailto:hello@opensprint.com.au">hello@opensprint.com.au</a></p>
+          <p class="contact-detail"><a href="tel:+61200000000">(02) 0000 0000</a></p>
+          <p class="contact-detail">Sydney, NSW</p>
+        </div>
+        <form class="form" action="/api/contact" method="post">
+          <label>Name<input name="name" required maxlength="100" autocomplete="name"></label>
+          <label>Email<input name="email" type="email" required maxlength="200" autocomplete="email"></label>
+          <label>Company <span class="opt">(optional)</span><input name="company" maxlength="100" autocomplete="organization"></label>
+          <label>How can we help?<textarea name="message" required rows="5" maxlength="5000"></textarea></label>
+          <!-- Honeypot: hidden from people, filled in by bots -->
+          <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+          <!-- TODO: replace with the real Turnstile site key (this is Cloudflare's always-pass test key) -->
+          <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA"></div>
+          <button class="btn" type="submit">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; <span id="y">2026</span> OpenSprint. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</body>
+</html>
