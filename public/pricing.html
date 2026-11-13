@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pricing | OpenSprint</title>
-  <meta name="description" content="OpenSprint managed IT pricing: three plans from $59 per user, per month. Unlimited support, month to month, with a calculator to work out your price.">
+  <meta name="description" content="OpenSprint managed IT pricing: from $180 per user, per month, including Microsoft 365 Business Premium. Unlimited support, month to month, with a calculator to work out your price.">
   <link rel="canonical" href="https://www.opensprint.com.au/pricing">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="OpenSprint">
   <meta property="og:title" content="Pricing | OpenSprint">
-  <meta property="og:description" content="Three managed IT plans from $59 per user, per month. Unlimited support, month to month.">
+  <meta property="og:description" content="Managed IT from $180 per user, per month, including Microsoft 365 Business Premium.">
   <meta property="og:url" content="https://www.opensprint.com.au/pricing">
   <meta name="theme-color" content="#0b1220">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -37,40 +37,27 @@
   <!-- /header -->
 
   <main id="main">
-    <!-- TODO: prices, response times and inclusions are proposals. Confirm them before launch. -->
+    <!-- TODO: confirm prices before launch. Complete ($240) depends on the cost of the 24/7 security monitoring service. -->
     <section class="hero page-hero">
       <div class="wrap">
         <p class="eyebrow">Pricing</p>
-        <h1>One price per user. Everything else is included.</h1>
-        <p class="lede">Pick the plan that fits, multiply by your number of staff, and that's your monthly bill. No contract, no hidden extras, and no hourly charges for support.</p>
+        <h1>One price per user, Microsoft 365 included</h1>
+        <p class="lede">Each user's Microsoft 365 Business Premium licence is part of the price, along with unlimited support, security and backup. Multiply by your number of staff and that's your monthly bill. No hidden extras and no hourly charges for support.</p>
       </div>
     </section>
 
     <section class="section section-flush-top">
       <div class="wrap">
-        <div class="plans">
-          <div class="plan">
-            <h3>Essentials</h3>
-            <p class="for">Reliable support and core security for small teams.</p>
-            <p class="price"><strong>$59</strong><span>per user / month</span></p>
-            <ul class="checklist">
-              <li>Unlimited remote helpdesk, business hours</li>
-              <li>Device management and patching</li>
-              <li>Endpoint protection on every device</li>
-              <li>Microsoft 365 administration</li>
-              <li>MFA set up and enforced</li>
-              <li>New starter and leaver setup</li>
-              <li>Urgent issues answered within 4 business hours</li>
-            </ul>
-            <a class="btn btn-ghost btn-block" href="/contact?plan=essentials">Get a quote</a>
-          </div>
+        <div class="plans plans-2">
           <div class="plan featured">
             <span class="badge">Most popular</span>
             <h3>Business</h3>
-            <p class="for">Full protection and backup for growing businesses.</p>
-            <p class="price"><strong>$99</strong><span>per user / month</span></p>
+            <p class="for">Everything a growing business needs from IT, in one price.</p>
+            <p class="price"><strong>$180</strong><span>per user / month</span></p>
             <ul class="checklist">
-              <li>Everything in Essentials</li>
+              <li>Microsoft 365 Business Premium licence</li>
+              <li>Unlimited helpdesk, 8am–6pm weekdays</li>
+              <li>Endpoint protection and device management</li>
               <li>Email security and phishing protection</li>
               <li>Microsoft 365 backup with restore tests</li>
               <li>Security awareness training</li>
@@ -83,8 +70,8 @@
           </div>
           <div class="plan">
             <h3>Complete</h3>
-            <p class="for">24/7 cover and strategy for businesses that can't stop.</p>
-            <p class="price"><strong>$149</strong><span>per user / month</span></p>
+            <p class="for">24/7 protection and planning for businesses that can't stop.</p>
+            <p class="price"><strong>$240</strong><span>per user / month</span></p>
             <ul class="checklist">
               <li>Everything in Business</li>
               <li>24/7 security monitoring and response</li>
@@ -97,7 +84,7 @@
             <a class="btn btn-ghost btn-block" href="/contact?plan=complete">Get a quote</a>
           </div>
         </div>
-        <p class="plans-note">Prices are in AUD and exclude GST. Onboarding is a one-off fixed fee, quoted before you commit.</p>
+        <p class="plans-note">Minimum 5 users. Prices are in AUD and exclude GST. Onboarding is a one-off fixed fee, quoted before you commit.</p>
       </div>
     </section>
 
@@ -106,28 +93,27 @@
         <div class="section-head">
           <p class="eyebrow">Calculator</p>
           <h2>Work out your monthly price</h2>
-          <p class="section-lede">This is what you'd pay each month once you're onboarded.</p>
+          <p class="section-lede">This is what you'd pay each month once you're onboarded, Microsoft 365 licences included.</p>
         </div>
-        <form class="calc" data-calc>
+        <form class="calc" data-calc data-min-users="5">
           <div>
             <fieldset>
               <legend>Plan</legend>
               <div class="segmented">
-                <label><input type="radio" name="plan" value="essentials" data-price="59" data-name="Essentials"><span>Essentials</span></label>
-                <label><input type="radio" name="plan" value="business" data-price="99" data-name="Business" checked><span>Business</span></label>
-                <label><input type="radio" name="plan" value="complete" data-price="149" data-name="Complete"><span>Complete</span></label>
+                <label><input type="radio" name="plan" value="business" data-price="180" data-name="Business" checked><span>Business</span></label>
+                <label><input type="radio" name="plan" value="complete" data-price="240" data-name="Complete"><span>Complete</span></label>
               </div>
             </fieldset>
             <label class="label" for="users-number">Number of staff</label>
             <div class="users-row">
-              <input type="range" min="1" max="100" value="10" aria-label="Number of staff" data-users-range>
-              <input id="users-number" type="number" min="1" max="500" value="10" inputmode="numeric" data-users-number>
+              <input type="range" min="1" max="100" value="15" aria-label="Number of staff" data-users-range>
+              <input id="users-number" type="number" min="1" max="500" value="15" inputmode="numeric" data-users-number>
             </div>
           </div>
           <div class="calc-result" aria-live="polite">
-            <span class="total" data-total>$990</span>
-            <p data-detail>10 users × $99 on Business. $1,089 a month including GST.</p>
-            <a class="btn" href="/contact?plan=business&amp;users=10" data-quote>Get a quote for this</a>
+            <span class="total" data-total>$2,700</span>
+            <p data-detail>15 users × $180 on Business. $2,970 a month including GST.</p>
+            <a class="btn" href="/contact?plan=business&amp;users=15" data-quote>Get a quote for this</a>
           </div>
         </form>
       </div>
@@ -140,36 +126,37 @@
           <h2>Compare plans in detail</h2>
         </div>
         <div class="table-scroll">
-          <table class="compare">
+          <table class="compare compare-2">
             <thead>
-              <tr><th scope="col">Feature</th><th scope="col">Essentials</th><th scope="col">Business</th><th scope="col">Complete</th></tr>
+              <tr><th scope="col">Feature</th><th scope="col">Business</th><th scope="col">Complete</th></tr>
             </thead>
             <tbody>
-              <tr class="group"><th colspan="4" scope="colgroup">Support</th></tr>
-              <tr><th scope="row">Unlimited remote helpdesk</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-              <tr><th scope="row">Support hours</th><td>8am–6pm weekdays</td><td>8am–6pm weekdays</td><td>24/7 for critical issues</td></tr>
-              <tr><th scope="row">Support by email, chat and desktop icon</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-              <tr><th scope="row">Response to urgent issues</th><td>4 business hours</td><td>1 business hour</td><td>30 minutes</td></tr>
-              <tr><th scope="row">New starter and leaver setup</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-              <tr><th scope="row">On-site visits</th><td>Hourly rate</td><td>Hourly rate</td><td class="yes">Included</td></tr>
-              <tr class="group"><th colspan="4" scope="colgroup">Security</th></tr>
-              <tr><th scope="row">Endpoint protection</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-              <tr><th scope="row">Patching for Windows, macOS and apps</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-              <tr><th scope="row">MFA and sign-in policies</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-              <tr><th scope="row">Email security and phishing protection</th><td>–</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-              <tr><th scope="row">Security awareness training</th><td>–</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-              <tr><th scope="row">Essential Eight alignment and reporting</th><td>–</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-              <tr><th scope="row">24/7 security monitoring and response</th><td>–</td><td>–</td><td class="yes">✓</td></tr>
-              <tr class="group"><th colspan="4" scope="colgroup">Cloud and data</th></tr>
-              <tr><th scope="row">Microsoft 365 administration</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-              <tr><th scope="row">Microsoft 365 backup</th><td>–</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-              <tr><th scope="row">Regular restore tests</th><td>–</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-              <tr class="group"><th colspan="4" scope="colgroup">Infrastructure and planning</th></tr>
-              <tr><th scope="row">Device management</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-              <tr><th scope="row">Network and firewall management</th><td>–</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-              <tr><th scope="row">IT review</th><td>–</td><td>Twice a year</td><td>Quarterly</td></tr>
-              <tr><th scope="row">Roadmap and budget planning</th><td>–</td><td>–</td><td class="yes">✓</td></tr>
-              <tr><th scope="row">Vendor management</th><td>–</td><td>–</td><td class="yes">✓</td></tr>
+              <tr class="group"><th colspan="3" scope="colgroup">Microsoft 365</th></tr>
+              <tr><th scope="row">Microsoft 365 Business Premium licence</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">Microsoft 365 administration</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">Microsoft 365 backup</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">Regular restore tests</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr class="group"><th colspan="3" scope="colgroup">Support</th></tr>
+              <tr><th scope="row">Unlimited helpdesk</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">Support by email, chat and desktop icon</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">Support hours</th><td>8am–6pm weekdays</td><td>24/7 for critical issues</td></tr>
+              <tr><th scope="row">Response to urgent issues</th><td>1 business hour</td><td>30 minutes</td></tr>
+              <tr><th scope="row">New starter and leaver setup</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">On-site visits</th><td>Hourly rate</td><td class="yes">Included</td></tr>
+              <tr class="group"><th colspan="3" scope="colgroup">Security</th></tr>
+              <tr><th scope="row">Endpoint protection</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">Patching for Windows, macOS and apps</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">MFA and sign-in policies</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">Email security and phishing protection</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">Security awareness training</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">Essential Eight alignment and reporting</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">24/7 security monitoring and response</th><td>–</td><td class="yes">✓</td></tr>
+              <tr class="group"><th colspan="3" scope="colgroup">Infrastructure and planning</th></tr>
+              <tr><th scope="row">Device management</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">Network and firewall management</th><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">IT review</th><td>Twice a year</td><td>Quarterly</td></tr>
+              <tr><th scope="row">Roadmap and budget planning</th><td>–</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">Vendor management</th><td>–</td><td class="yes">✓</td></tr>
             </tbody>
           </table>
         </div>
@@ -185,7 +172,23 @@
         <div class="faq">
           <details>
             <summary>What counts as a "user"?</summary>
-            <p>Anyone at your business who needs support and has their own Microsoft 365 or Google account. Their laptop, phone and tablet are included. Shared mailboxes and meeting-room accounts are free.</p>
+            <p>Anyone at your business who needs their own Microsoft 365 account. Their laptop, phone and tablet are included. Shared mailboxes and meeting-room accounts are free.</p>
+          </details>
+          <details>
+            <summary>Is there a minimum?</summary>
+            <p>Yes, 5 users. Our plans are built for businesses with roughly 5 to 100 staff. If you're smaller, we're happy to suggest someone who works on an hourly basis.</p>
+          </details>
+          <details>
+            <summary>Why is Microsoft 365 included?</summary>
+            <p>Business Premium includes the security tools we use to protect you, such as Defender, Intune and sign-in policies. Supplying it ourselves means every client gets the same protection, and you get one bill instead of two.</p>
+          </details>
+          <details>
+            <summary>We already pay for Microsoft 365. What happens?</summary>
+            <p>We move your licences to us when your current term ends. Until then, we take the licence cost off your monthly price, so you never pay for Microsoft 365 twice.</p>
+          </details>
+          <details>
+            <summary>Is there a minimum term?</summary>
+            <p>Our service is month to month, and you can leave with 30 days' notice. Microsoft 365 licences are the one exception: Microsoft sells them on 12-month terms. If you leave partway through, you can take the licences with you or pay out the rest of the term. We'll hand over your passwords, documentation and admin access either way.</p>
           </details>
           <details>
             <summary>How do we get support?</summary>
@@ -197,23 +200,19 @@
           </details>
           <details>
             <summary>What happens when we hire or let people go?</summary>
-            <p>Your bill follows your headcount. Add someone and they're on next month's invoice. Remove someone and they come off it. Setting up starters and leavers is included.</p>
+            <p>Your bill follows your headcount. Add someone and they're on next month's invoice. When someone leaves, we reassign their licence to your next starter, or remove it at its renewal date. Setting up starters and leavers is included.</p>
           </details>
           <details>
             <summary>What isn't included?</summary>
-            <p>Hardware, software licences (like Microsoft 365 itself) and projects such as office moves or a new server. We quote these up front at a fixed price. You're welcome to buy hardware and licences elsewhere if you prefer.</p>
+            <p>Hardware, software other than Microsoft 365, and projects such as office moves or a new server. We quote these up front at a fixed price. You're welcome to buy hardware elsewhere if you prefer.</p>
           </details>
           <details>
             <summary>Can we mix plans?</summary>
             <p>Everyone in your business is on the same plan. It keeps your security consistent, since one unprotected account is all an attacker needs.</p>
           </details>
           <details>
-            <summary>Is there a minimum term?</summary>
-            <p>No. All plans are month to month, and you can leave with 30 days' notice. We'll hand over your passwords, documentation and admin access when you go.</p>
-          </details>
-          <details>
-            <summary>Can we change plans later?</summary>
-            <p>Yes. You can move up a plan at any time, and move down at the start of any month.</p>
+            <summary>Can prices change?</summary>
+            <p>We review prices once a year and give you at least 30 days' notice of any change. If Microsoft raises its licence prices, we pass that change on at cost.</p>
           </details>
         </div>
       </div>

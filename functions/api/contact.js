@@ -32,11 +32,11 @@ export async function onRequestPost({ request, env }) {
   const email = field('email', 200);
   const company = field('company', 100);
   const message = field('message', 5000);
-  const plans = { essentials: 'Essentials', business: 'Business', complete: 'Complete', question: 'Just a question' };
+  const plans = { business: 'Business', complete: 'Complete', question: 'Just a question' };
   const plan = plans[field('plan', 20)] ?? 'Not sure yet';
   const users = parseInt(field('users', 6), 10);
   const staff = users > 0 && users <= 10000 ? String(users) : '-';
-  const isQuote = ['Essentials', 'Business', 'Complete'].includes(plan);
+  const isQuote = ['Business', 'Complete'].includes(plan);
   if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return fail('Please fill in your name and a valid email address.');
   }

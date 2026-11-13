@@ -206,6 +206,8 @@ a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
 
 /* Plans */
 .plans { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: stretch; }
+.plans-2 { max-width: 860px; margin-inline: auto; }
+.compare-2 { min-width: 520px; }
 .plan {
   position: relative;
   display: flex; flex-direction: column;

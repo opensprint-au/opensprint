@@ -23,11 +23,15 @@ if (calc) {
 
   const update = () => {
     const plan = calc.querySelector('input[name="plan"]:checked');
+    const min = Number(calc.dataset.minUsers) || 1;
     const users = Math.max(1, Math.min(500, parseInt(number.value, 10) || 1));
+    const billed = Math.max(users, min);
     const price = Number(plan.dataset.price);
-    const monthly = users * price;
+    const monthly = billed * price;
     total.textContent = aud.format(monthly);
-    detail.textContent = `${users} ${users === 1 ? 'user' : 'users'} × ${aud.format(price)} on ${plan.dataset.name}. ${aud.format(monthly * 1.1)} a month including GST.`;
+    detail.textContent = users < min
+      ? `Our minimum is ${min} users, so this is the price for ${min} users × ${aud.format(price)} on ${plan.dataset.name}. ${aud.format(monthly * 1.1)} a month including GST.`
+      : `${users} users × ${aud.format(price)} on ${plan.dataset.name}. ${aud.format(monthly * 1.1)} a month including GST.`;
     quote.href = `/contact?plan=${plan.value}&users=${users}`;
   };
 
