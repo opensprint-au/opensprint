@@ -32,8 +32,16 @@ export async function onRequestPost({ request, env }) {
   const email = field('email', 200);
   const company = field('company', 100);
   const message = field('message', 5000);
-  if (!name || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return fail('Please fill in your name, a valid email address and a message.');
+  const plans = { essentials: 'Essentials', business: 'Business', complete: 'Complete', question: 'Just a question' };
+  const plan = plans[field('plan', 20)] ?? 'Not sure yet';
+  const users = parseInt(field('users', 6), 10);
+  const staff = users > 0 && users <= 10000 ? String(users) : '-';
+  const isQuote = ['Essentials', 'Business', 'Complete'].includes(plan);
+  if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return fail('Please fill in your name and a valid email address.');
+  }
+  if (!message && !isQuote) {
+    return fail('Please tell us how we can help, or choose a plan.');
   }
 
   const sent = await fetch('https://api.resend.com/emails', {
@@ -43,8 +51,8 @@ export async function onRequestPost({ request, env }) {
       from: env.MAIL_FROM,
       to: env.MAIL_TO,
       reply_to: email,
-      subject: `Website enquiry from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\nCompany: ${company || '-'}\n\n${message}`,
+      subject: isQuote ? `Quote request (${plan}, ${staff} staff) from ${name}` : `Website enquiry from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\nCompany: ${company || '-'}\nPlan: ${plan}\nStaff: ${staff}\n\n${message || '(no message)'}`,
     }),
   });
   if (!sent.ok) {
@@ -61,7 +69,7 @@ function redirect(request, path) {
 
 function fail(text) {
   return new Response(
-    `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Message not sent</title><link rel="stylesheet" href="/css/style.css"><main class="hero"><div class="wrap"><h1>Message not sent.</h1><p class="lede">${text}</p><div class="cta-row"><a class="btn" href="/#contact">Back to the form</a></div></div></main>`,
+    `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Message not sent</title><link rel="stylesheet" href="/css/style.css"><main class="hero"><div class="wrap"><h1>Message not sent.</h1><p class="lede">${text}</p><div class="cta-row"><a class="btn" href="/contact">Back to the form</a></div></div></main>`,
     { status: 400, headers: { 'Content-Type': 'text/html; charset=utf-8' } },
   );
 }

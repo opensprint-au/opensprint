@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get a Quote | OpenSprint</title>
+  <meta name="description" content="Get a fixed managed IT quote from OpenSprint within one business day. No sales call needed.">
+  <link rel="canonical" href="https://www.opensprint.com.au/contact">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OpenSprint">
+  <meta property="og:title" content="Get a Quote | OpenSprint">
+  <meta property="og:description" content="Get a fixed managed IT quote within one business day. No sales call needed.">
+  <meta property="og:url" content="https://www.opensprint.com.au/contact">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/site.js" defer></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+  <!-- header -->
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="OpenSprint home">
+        <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M9 21 L15 11 L18 16 L23 9" fill="none" stroke="var(--bg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>OpenSprint</span>
+      </a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="/services">Services</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/how-it-works">How it works</a>
+        <a href="/about">About</a>
+      </nav>
+      <a class="btn btn-sm" href="/contact">Get a quote</a>
+    </div>
+  </header>
+  <!-- /header -->
+
+  <main id="main">
+    <section class="hero page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Get a quote</p>
+        <h1>Get a fixed quote within one business day</h1>
+        <p class="lede">Tell us a little about your business. We'll reply by email with a written quote. No sales call unless you ask for one.</p>
+      </div>
+    </section>
+
+    <section class="section section-flush-top">
+      <div class="wrap contact">
+        <form class="form" action="/api/contact" method="post" data-quote-form>
+          <div class="form-row">
+            <label>Name<input name="name" required maxlength="100" autocomplete="name"></label>
+            <label>Email<input name="email" type="email" required maxlength="200" autocomplete="email"></label>
+          </div>
+          <label>Company <span class="opt">(optional)</span><input name="company" maxlength="100" autocomplete="organization"></label>
+          <div class="form-row">
+            <label>Plan
+              <select name="plan">
+                <option value="">Not sure yet</option>
+                <option value="essentials">Essentials ($59)</option>
+                <option value="business">Business ($99)</option>
+                <option value="complete">Complete ($149)</option>
+                <option value="question">Just a question</option>
+              </select>
+            </label>
+            <label>Number of staff<input name="users" type="number" min="1" max="10000" inputmode="numeric"></label>
+          </div>
+          <label>What do you use today, and what's not working? <span class="opt">(optional for quotes)</span><textarea name="message" rows="5" maxlength="5000" placeholder="For example: 12 staff on Microsoft 365, laptops and an office in Surry Hills. Our current IT provider is slow to respond."></textarea></label>
+          <!-- Honeypot: hidden from people, filled in by bots -->
+          <label class="hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAFxTJyCTafk5p7rK"></div>
+          <p class="form-note">We only use your details to reply to you. See our <a href="/privacy">privacy policy</a>.</p>
+          <button class="btn" type="submit">Send</button>
+        </form>
+
+        <div class="aside">
+          <h2>What happens next</h2>
+          <ol>
+            <li>We read your message and reply by email within one business day.</li>
+            <li>If we need more detail, we'll send a few short questions.</li>
+            <li>You get a written quote: your monthly price plus a fixed onboarding fee.</li>
+            <li>Take your time. There's no follow-up pressure.</li>
+          </ol>
+          <h2>Prefer to talk?</h2>
+          <p>Say so in the form and we'll book a time to call you.</p>
+          <p class="contact-detail"><a href="mailto:hello@opensprint.com.au">hello@opensprint.com.au</a></p>
+          <p class="contact-detail">Sydney, NSW</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="brand" href="/" aria-label="OpenSprint home">
+          <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M9 21 L15 11 L18 16 L23 9" fill="none" stroke="var(--bg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>OpenSprint</span>
+        </a>
+        <p>Managed IT for Sydney businesses. One price per user, month to month.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/how-it-works">How it works</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="/contact">Get a quote</a></li>
+          <li><a href="mailto:hello@opensprint.com.au">hello@opensprint.com.au</a></li>
+          <li>Sydney, NSW</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <!-- TODO: add ABN once registered, e.g. "ABN 00 000 000 000" -->
+      <p>&copy; <span data-year>2026</span> OpenSprint. Prices are in AUD and exclude GST.</p>
+      <p><a href="/privacy">Privacy policy</a></p>
+    </div>
+  </footer>
+  <!-- /footer -->
+</body>
+</html>

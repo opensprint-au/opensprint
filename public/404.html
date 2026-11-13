@@ -12,22 +12,25 @@
 </head>
 <body>
   <!-- header -->
+  <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="/" aria-label="OpenSprint home">
         <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M9 21 L15 11 L18 16 L23 9" fill="none" stroke="var(--bg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>OpenSprint</span>
       </a>
-      <nav aria-label="Main">
-        <a href="/#services">Services</a>
-        <a href="/#approach">Approach</a>
-        <a class="btn btn-sm" href="/#contact">Get in touch</a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="/services">Services</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/how-it-works">How it works</a>
+        <a href="/about">About</a>
       </nav>
+      <a class="btn btn-sm" href="/contact">Get a quote</a>
     </div>
   </header>
   <!-- /header -->
 
-  <main class="hero">
+  <main id="main" class="hero">
     <div class="wrap">
       <p class="eyebrow">404</p>
       <h1>This page doesn't exist.</h1>
@@ -38,12 +41,36 @@
 
   <!-- footer -->
   <footer class="site-footer">
-    <div class="wrap footer">
-      <p>&copy; <span data-year>2026</span> OpenSprint · Sydney, NSW</p>
+    <div class="wrap footer-grid">
+      <div>
+        <a class="brand" href="/" aria-label="OpenSprint home">
+          <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M9 21 L15 11 L18 16 L23 9" fill="none" stroke="var(--bg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>OpenSprint</span>
+        </a>
+        <p>Managed IT for Sydney businesses. One price per user, month to month.</p>
+      </div>
       <nav aria-label="Footer">
-        <a href="/privacy">Privacy</a>
-        <a href="mailto:hello@opensprint.com.au">hello@opensprint.com.au</a>
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/how-it-works">How it works</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
       </nav>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="/contact">Get a quote</a></li>
+          <li><a href="mailto:hello@opensprint.com.au">hello@opensprint.com.au</a></li>
+          <li>Sydney, NSW</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <!-- TODO: add ABN once registered, e.g. "ABN 00 000 000 000" -->
+      <p>&copy; <span data-year>2026</span> OpenSprint. Prices are in AUD and exclude GST.</p>
+      <p><a href="/privacy">Privacy policy</a></p>
     </div>
   </footer>
   <!-- /footer -->

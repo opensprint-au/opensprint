@@ -12,6 +12,7 @@ Marketing site for OpenSprint, a managed IT services company in Sydney. Live at 
 
 - `public/`: everything that gets published. Cloudflare Pages serves this folder as the site.
 - `public/_headers`: security headers, including the CSP. When adding a third-party script, frame or image, update the CSP or it will be blocked.
+- Plan prices appear in several places. When changing them, update all of these: `index.html` (pricing teaser), `pricing.html` (plan cards, comparison table, and the calculator's `data-price` attributes), `contact.html` (plan dropdown) and the "from $59" line in the `index.html` hero.
 - `functions/api/contact.js`: the contact form handler (a Cloudflare Pages Function). It must stay outside `public/`.
 
 ## Adding a page
