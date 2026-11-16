@@ -5,6 +5,11 @@ document.querySelectorAll('[data-year]').forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
+// Today's date in the hero taskbar illustration (en-AU, e.g. 16/11/2026)
+document.querySelectorAll('[data-today]').forEach((el) => {
+  el.textContent = new Date().toLocaleDateString('en-AU', { day: '2-digit', month: '2-digit', year: 'numeric' });
+});
+
 // Highlight the current page in the main nav
 const here = location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
 document.querySelectorAll('.nav-links a').forEach((a) => {
