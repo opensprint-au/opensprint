@@ -152,6 +152,18 @@ p { margin: 0 0 1em; }
   box-shadow: 0 1px 0 rgb(255 255 255 / .8) inset, 0 24px 48px -16px rgb(23 37 84 / .28);
 }
 .hero-visual .panel-head, .hero-visual .panel-foot { border-color: rgb(15 23 42 / .08); }
+/* Stat tiles in the hero dashboard */
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin-bottom: 1rem; }
+.stats > div { padding: .8rem .9rem; border-radius: 12px; background: rgb(255 255 255 / .65); border: 1px solid rgb(15 23 42 / .06); }
+.stats small { display: block; color: var(--muted); font-size: .78rem; margin-bottom: .2rem; }
+.stats b { display: block; font-size: 1.45rem; font-weight: 650; letter-spacing: -.03em; line-height: 1.15; }
+.stats b span { color: var(--muted); font-weight: 500; font-size: .95rem; letter-spacing: 0; }
+.stats em { display: inline-flex; align-items: center; gap: .3rem; margin-top: .3rem; font-style: normal; font-size: .76rem; font-weight: 600; color: var(--ok); }
+.stats em::before { content: ""; width: .4rem; height: .4rem; border-radius: 50%; background: currentColor; }
+.setup.activity li { padding-block: .55rem; }
+.setup.activity li em { color: var(--muted); font-weight: 500; }
+.setup.activity li.now em { color: var(--brand); font-weight: 600; }
+.foot-label { font-weight: 600; color: var(--fg); white-space: nowrap; }
 .hero-visual .setup li > span:first-child { background: rgb(255 255 255 / .7); border-color: rgb(15 23 42 / .06); }
 .hero-visual .setup li.done > span:first-child { background: var(--ok-soft); }
 .hero-visual .setup li.now { background: rgb(255 255 255 / .6); }
@@ -201,7 +213,7 @@ p { margin: 0 0 1em; }
 .setup li.now em { color: var(--brand); }
 .panel-foot { display: flex; align-items: center; gap: .6rem; margin-top: 1.1rem; padding-top: 1.1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
 .bar { flex: 1; height: 6px; border-radius: 999px; background: var(--bg-alt); overflow: hidden; border: 1px solid var(--line); }
-.bar::before { content: ""; display: block; height: 100%; width: 82%; background: var(--brand); border-radius: inherit; }
+.bar::before { content: ""; display: block; height: 100%; width: 87.5%; background: var(--brand); border-radius: inherit; }
 
 /* Old hero status list (kept for any page still using it) */
 .status { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
