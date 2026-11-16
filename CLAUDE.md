@@ -6,7 +6,10 @@ Marketing site for OpenSprint, a managed IT services company in Sydney. Live at 
 
 - Keep it lean: plain HTML and CSS with no build step, no framework and no npm dependencies. The owner chose this over a static site generator.
 - Write Australian English (en-AU), in plain language.
+- Audience: businesses with 5+ staff that run purely on Microsoft 365, with no on-site servers. The key selling point is devices that arrive registered to the client and set themselves up on first sign-in (Intune, Teams, OneDrive). Don't pitch on-site server support; server-to-cloud moves are a quoted project.
+- Fonts are self-hosted in `public/fonts/` (Inter, OFL) because the CSP only allows `'self'`.
 - Branding isn't finished yet. Keep colours in the CSS variables in `public/css/style.css` so they can be swapped in one place.
+- Look: white, corporate and light-only (no dark mode), with black pill buttons and the blue `--brand` colour used sparingly.
 
 ## Layout
 
