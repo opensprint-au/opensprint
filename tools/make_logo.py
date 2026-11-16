@@ -36,7 +36,7 @@ def draw(pen_out, ch, x, y):
     return hmtx[cmap[ord(ch)]][0] + track
 
 
-drop = round(cap * drop_ratio)
+drop = round(cap * drop_ratio) - 560   # raised so Sprint sits on the end of the shorter n leg
 pen = SVGPathPen(gs)
 x = 0.0
 base_top = cap + 40              # top baseline, leaving room above the caps
@@ -53,7 +53,7 @@ right = n_x + nx1
 left = right - stem
 # extend the leg: from a little above the n's baseline down to Sprint's baseline
 leg_top = base_top - 20
-leg_shorten = 560   # font units; about 1.5 mm at header size
+leg_shorten = 0     # font units; the leg ends on Sprint's baseline
 leg_bottom = base_top + drop - leg_shorten
 pen.moveTo((left, leg_top)); pen.lineTo((right, leg_top)); pen.lineTo((right, leg_bottom)); pen.lineTo((left, leg_bottom)); pen.closePath()
 
