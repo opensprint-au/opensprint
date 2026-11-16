@@ -85,8 +85,21 @@ p { margin: 0 0 1em; }
   border-bottom: 1px solid rgb(0 0 0 / .06);
 }
 .nav { display: flex; align-items: center; gap: 2.5rem; height: 76px; }
-.brand { display: flex; align-items: center; gap: .55rem; font-weight: 700; font-size: 1.12rem; text-decoration: none; color: var(--brand); letter-spacing: -.02em; }
-.brand span { color: var(--fg); }
+/* Wordmark: "Open" high, "Sprint" stepped down, joined by a slanted blue stroke */
+.brand { display: inline-flex; align-items: center; text-decoration: none; color: var(--fg); }
+.logo {
+  display: inline-flex; align-items: flex-start;
+  font-size: 1.45rem; font-weight: 800; letter-spacing: -.045em; line-height: 1;
+  padding-bottom: .34em;   /* room for the stepped-down "Sprint" */
+}
+.logo-sprint { transform: translateY(.34em); margin-left: -.02em; }
+.logo-step {
+  align-self: stretch;
+  width: .13em; margin: .08em .1em -.3em .06em;
+  border-radius: 1px;
+  background: var(--brand);
+  transform: skewX(-16deg);
+}
 .nav-links { display: flex; align-items: center; gap: .25rem; margin-right: auto; }
 .nav-links a { text-decoration: none; color: var(--fg); font-size: .98rem; font-weight: 450; white-space: nowrap; padding: .45rem .75rem; border-radius: 8px; transition: color .15s ease, background-color .15s ease; }
 .nav-links a:hover { color: var(--fg); background: var(--bg-alt); }
@@ -504,8 +517,8 @@ a.card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); tran
 
 /* Footer */
 .site-footer { background: var(--graphite); color: var(--slate); font-size: .92rem; }
-.site-footer .brand span { color: #fff; }
-.site-footer .brand svg path { stroke: var(--graphite); }
+.site-footer .brand { color: #fff; }
+.site-footer .logo-step { background: #7c98ff; }
 .footer-grid { display: grid; gap: 2rem; padding-top: 4rem; padding-bottom: 3rem; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
 @media (min-width: 760px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr; } }
 .footer-grid .brand { margin-bottom: .85rem; }
