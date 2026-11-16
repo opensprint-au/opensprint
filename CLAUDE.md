@@ -8,6 +8,7 @@ Marketing site for OpenSprint, a managed IT services company in Sydney. Live at 
 - Write Australian English (en-AU), in plain language.
 - Audience: businesses with 5+ staff that run purely on Microsoft 365, with no on-site servers. The key selling point is devices that arrive registered to the client and set themselves up on first sign-in (Intune, Teams, OneDrive). Don't pitch on-site server support; server-to-cloud moves are a quoted project.
 - Fonts are self-hosted in `public/fonts/` (Inter, OFL) because the CSP only allows `'self'`.
+- Logo: `public/img/logo.svg` (black) and `logo-white.svg` (footer), plus `public/favicon.svg`. They're drawn from Inter's outlines by `tools/make_logo.py`: "Open" high, "Sprint" stepped down, and the right leg of the "n" extended to the bottom of the S. To regenerate: `pip install fonttools brotli`, then `python tools/make_logo.py public/fonts/inter-latin.woff2 public/img` and move `favicon.svg` up to `public/`.
 - Branding isn't finished yet. Keep colours in the CSS variables in `public/css/style.css` so they can be swapped in one place.
 - Look: white, corporate and light-only (no dark mode), with black pill buttons and the blue `--brand` colour used sparingly. Graphite (`--graphite`) is for secondary areas (devices band, footer, CTA). Glass effects only on the header and hero card, which sits on a colour wash so the blur shows.
 
