@@ -53,7 +53,8 @@ right = n_x + nx1
 left = right - stem
 # extend the leg: from a little above the n's baseline down to Sprint's baseline
 leg_top = base_top - 20
-leg_bottom = base_top + drop
+leg_shorten = 560   # font units; about 1.5 mm at header size
+leg_bottom = base_top + drop - leg_shorten
 pen.moveTo((left, leg_top)); pen.lineTo((right, leg_top)); pen.lineTo((right, leg_bottom)); pen.lineTo((left, leg_bottom)); pen.closePath()
 
 # "Sprint" starts just after the leg, a small gap like normal letter spacing
