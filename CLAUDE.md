@@ -9,7 +9,7 @@ Marketing site for OpenSprint, a managed IT services company in Sydney. Live at 
 - Audience: businesses with 5+ staff that run purely on Microsoft 365, with no on-site servers. The key selling point is devices that arrive registered to the client and set themselves up on first sign-in (Intune, Teams, OneDrive). Don't pitch on-site server support; server-to-cloud moves are a quoted project.
 - Fonts are self-hosted in `public/fonts/` (Inter, OFL) because the CSP only allows `'self'`.
 - Branding isn't finished yet. Keep colours in the CSS variables in `public/css/style.css` so they can be swapped in one place.
-- Look: white, corporate and light-only (no dark mode), with black pill buttons and the blue `--brand` colour used sparingly.
+- Look: white, corporate and light-only (no dark mode), with black pill buttons and the blue `--brand` colour used sparingly. Graphite (`--graphite`) is for secondary areas (devices band, footer, CTA). Glass effects only on the header and hero card, which sits on a colour wash so the blur shows.
 
 ## Layout
 
