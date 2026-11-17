@@ -258,9 +258,34 @@ p { margin: 0 0 1em; }
 .promises svg { color: var(--fg); flex: none; }
 
 /* Platform strip */
-.stack { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .6rem 1.75rem; padding: 2rem 0 0; color: var(--muted); font-size: .9rem; }
-.stack p { margin: 0; width: 100%; text-align: center; font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; }
-.stack span { font-weight: 600; color: var(--fg); opacity: .72; letter-spacing: -.01em; font-size: 1rem; }
+/* "Built on Microsoft 365" strip: a tinted panel with a tile per app */
+.stack {
+  margin-top: 2.5rem; padding: 1.75rem;
+  background: var(--bg-alt); border: 1px solid var(--line); border-radius: 20px;
+  display: grid; gap: 1.25rem;
+}
+.stack-head p { margin: 0; }
+.stack-label { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--brand); }
+.stack-head .stack-title { font-size: 1.2rem; font-weight: 700; letter-spacing: -.02em; line-height: 1.25; color: var(--fg); margin-top: .3rem; }
+.stack-head .stack-note { font-size: .92rem; color: var(--muted); margin-top: .35rem; }
+.stack-list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem;
+}
+.stack-list li {
+  background: var(--bg); border: 1px solid var(--line); border-radius: 12px;
+  padding: .75rem .9rem; display: grid; gap: .1rem;
+  transition: border-color .15s, transform .15s;
+}
+.stack-list li:hover { border-color: var(--line-strong); transform: translateY(-1px); }
+.stack-list b { font-size: .95rem; font-weight: 600; letter-spacing: -.01em; color: var(--fg); display: flex; align-items: center; gap: .45rem; }
+.stack-list b::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--brand); flex: none; }
+.stack-list span { font-size: .8rem; color: var(--muted); padding-left: calc(6px + .45rem); }
+@media (min-width: 640px) { .stack-list { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (min-width: 1000px) {
+  .stack { grid-template-columns: 15rem 1fr; align-items: center; gap: 2rem; padding: 2rem; }
+  .stack-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
 
 /* Sections */
 .section { padding: clamp(4.5rem, 9vw, 7.5rem) 0; }
