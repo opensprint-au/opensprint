@@ -5,10 +5,22 @@ document.querySelectorAll('[data-year]').forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
-// Today's date in the hero taskbar illustration (en-AU, e.g. 16/11/2026)
-document.querySelectorAll('[data-today]').forEach((el) => {
-  el.textContent = new Date().toLocaleDateString('en-AU', { day: '2-digit', month: '2-digit', year: 'numeric' });
-});
+// Clock in the hero taskbar illustration (en-AU, e.g. 10:24 am and 16/11/2026),
+// refreshed at the start of each minute
+const nowEls = document.querySelectorAll('[data-now]');
+const todayEls = document.querySelectorAll('[data-today]');
+if (nowEls.length || todayEls.length) {
+  const tick = () => {
+    const d = new Date();
+    const time = d.toLocaleTimeString('en-AU', { hour: 'numeric', minute: '2-digit', hour12: true })
+      .replace(/\s+/g, ' ').toLowerCase();
+    const date = d.toLocaleDateString('en-AU', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    nowEls.forEach((el) => { el.textContent = time; });
+    todayEls.forEach((el) => { el.textContent = date; });
+    setTimeout(tick, 60000 - (d.getSeconds() * 1000 + d.getMilliseconds()));
+  };
+  tick();
+}
 
 // Highlight the current page in the main nav
 const here = location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
